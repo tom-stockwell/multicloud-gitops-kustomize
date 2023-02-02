@@ -3,3 +3,4 @@ helmCharts:
   repo: https://helm.releases.hashicorp.com
   version: 0.23.0
   releaseName: vault
+  valuesFile: values.yml
