@@ -1,0 +1,28 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: vault
+
+helmCharts:
+- name: vault
+  repo: https://helm.releases.hashicorp.com
+  version: 0.23.0
+  releaseName: vault
+  valuesFile: values.yml
+
+resources:
+- resources/consolelink.yml
+- resources/namespace.yml
+
+patches:
+- path: patches/patch-remove-managedby.yml
+  target:
+    labelSelector: "app.kubernetes.io/managed-by=Helm"
+- path: patches/patch-service.yml
+  target:
+    kind: Service
+    name: vault
+- path: patches/patch-service-internal.yml
+  target:
+    kind: Service
+    name: vault-internal
+#- path: patches/patch-service-internal.yml
