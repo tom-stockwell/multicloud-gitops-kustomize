@@ -7,3 +7,4 @@ helmCharts:
     version: 0.23.0
     releaseName: vault
     valuesFile: values.yml
+    namespace: default

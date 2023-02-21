@@ -8,15 +8,10 @@ resources:
 - namespace.yml
 
 patches:
+- path: patches/patch-delete-test.yml
+#- path: patches/patch-envvars.yml
+- path: patches/patch-service.yml
+- path: patches/patch-service-internal.yml
 - path: patches/patch-remove-managedby.yml
   target:
     labelSelector: "app.kubernetes.io/managed-by=Helm"
-- path: patches/patch-service.yml
-  target:
-    kind: Service
-    name: vault
-- path: patches/patch-service-internal.yml
-  target:
-    kind: Service
-    name: vault-internal
-#- path: patches/patch-service-internal.yml
