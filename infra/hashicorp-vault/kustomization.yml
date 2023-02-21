@@ -9,7 +9,6 @@ resources:
 
 patches:
 - path: patches/patch-delete-test.yml
-#- path: patches/patch-envvars.yml
 - path: patches/patch-service.yml
 - path: patches/patch-service-internal.yml
 - path: patches/patch-remove-managedby.yml

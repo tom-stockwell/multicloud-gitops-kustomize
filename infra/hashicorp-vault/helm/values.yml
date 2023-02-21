@@ -28,12 +28,6 @@ server:
 
   service:
     enabled: true
-    nonha:
-      annotations:
-        service.beta.openshift.io/serving-cert-secret-name: vault-secret
-    internal:
-      annotations:
-        service.beta.openshift.io/serving-cert-secret-name: vault-secret-internal
   route:
     host: null
     enabled: true
